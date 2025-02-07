@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UptoSkills Internships Placements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .header .contact-info {
+             display: flex;
+              flex-wrap: wrap;
+              color: blue;
+              gap: 10px;
+              margin-bottom: 15px;
+              text-align: center;
+        }
+        .header .login-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .header .login-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: orange;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .header .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header .social-icons a {     
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+.header .social-icons a:hover {
+    color: orange;
+}
+
+.header .search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.header .search-icon:hover {
+    color: orange;
+}
+
+/* Adjustments for Mobile Screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header .contact-info {
+        justify-content: center;
+    }
+    
+    .header .login-buttons {
+        justify-content: center;
+    }
+    
+    .header .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .header .contact-info {
+        font-size: 14px;
+    }
+    
+    .header .login-buttons a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    
+    .header .social-icons a {
+        font-size: 16px;
+    }
+}
+        .moving-banner {
+            background-color: lightseagreen;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+        .moving-banner span {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            animation: moveBanner 10s linear infinite;
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        @keyframes moveBanner {
+            0% { right: -100%; }
+            10% { right: 0%; }
+            90% { right: 100%; }
+            100% { right: 200%; }
+        }
+        .banner {
+            position: relative;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .menu a {
+            color:lightseagreen;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .banner .banner-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color:lightseagreen;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(29, 5, 95, 0.8);
+        }    
+        .banner .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: lightseagreen;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            background: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .hackathons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.card {
+    position: relative;
+    margin-bottom: 10px; /* Space between card and name */
+}
+
+.card-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+        .card {
+            position: relative;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: pink; /* Change text color */
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+            text-align: center;
+        }
+        .register-btn {
+            display: inline-block;
+            margin-top: 100px;
+            padding: 10px 20px;
+            border: 2px solid pink; /* Change border color */
+            color:pink; /* Change text color */
+            background: none; /* Light background for visibility */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .register-btn:hover {
+            background: black;
+            color: white;
+        }
+        .winners {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        footer h3, footer h4 {
+            color: #FF6F61;
+        }
+        footer a {
+            color: #00d1ff;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header .contact-info {
+                justify-content: center;
+                gap: 10px;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+                top: 10px;
+            }
+            .banner .banner-text {
+                font-size: 20px;
+            }
+            .paragraph-text {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .video-container {
+                height: 200px;
+            }
+            .overlay-text h1 {
+                font-size: 18px;
+            }
+            .form-container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header .social-icons a {
+                font-size: 16px;
+            }
+            .moving-banner span {
+                font-size: 18px;
+            }
+            .banner .banner-text {
+                font-size: 16px;
+            }
+            .paragraph-text {
+                font-size: 16px;
+            }
+            .overlay-text h1 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="contact-info">
+            <span>Palam, New Delhi, Delhi 110077</span>
+            <span>info@uptoskills.com</span>
+            <span>+91-9319772294</span>
+        </div>
+        <div class="login-buttons">
+            <a href="./login.html">Employer Login</a>
+            <a href="./candidatelogin.html">Candidate Login</a>
+        </div>
+        <div class="search-icon">
+            <i class="fas fa-search"></i>
+        </div>
+                <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+
+    <div class="moving-banner">
+        <span><b>Welcome to UptoSkills - Your Gateway to Success!</b></span>
+    </div>
+   
+    <div class="banner">
+        <img src="https://kidteachkid.org/wp-content/uploads/2020/08/Hackathon-contest-flier-reduced-cleaned-09-2022-scaled.jpg" alt="UptoSkills Image">
+        <div class="menu">
+            <a href="./index.html"><b>Home</b></a>
+            <a href="./internship.html"><b>Internship</b></a>
+            <a href="./jobs.html"><b>Jobs</b></a>
+            <a href="#"><b>Discover +</b></a>
+        </div>
+    </div>
+    <div class="container">
+        <h1><center>Hackathons & Competitions</center></h1>
+        <div class="hackathons">
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://cdn4.vectorstock.com/i/1000x1000/85/98/hackathon-concept-with-icons-and-signs-vector-28848598.jpg" alt="Big Data Thon">
+                    <div class="card-content">
+                        <h2><b>BIGDATA-THON</b></h2>
+                    </div>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+                <p class="card-name">BIGDATA-THON</p> <!-- Name moved below the card -->
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://cdn5.vectorstock.com/i/1000x1000/27/09/hackathon-signs-round-design-template-thin-line-vector-28032709.jpg" alt="Startup Thon 2.0">
+                    <div class="card-content">
+                        <h2><b>STARTUP-THON 2.0</b></h2>
+                    </div>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+                <p class="card-name">STARTUP-THON 2.0</p> <!-- Name moved below the card -->
+            </div>
+        </div>
+    </div>
+    
+        <footer>
+            <div>
+                <h3>UPTOSKILLS</h3>
+                <p>Address: Palam, New Delhi, Delhi 110077</p>
+                <p>Email: <a href="mailto:info@uptoskills.com">info@uptoskills.com</a></p>
+                <p>Phone: <a href="tel:+919319772294">+91-9319772294</a></p>
+                <div>
+                    <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Jobs & Internships</a></li>
+                    <li><a href="#">Become a Trainer</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Short Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund & Cancellation Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Find Us Here</h4>
+                <p><a href="#">Login to Download Certificate</a></p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
+    

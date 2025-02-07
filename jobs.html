@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UptoSkills Internships Placements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+      
+        #qualification-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align at the top */
+            padding-top: 100px; /* Adds space from top */
+            z-index: 9999;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #qualification-screen select {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #main-content {
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .header .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            color: blue;
+            gap: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .header .login-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header .login-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: orange;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .header .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .header .social-icons a {     
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header .social-icons a:hover {
+            color: orange;
+        }
+
+        .header .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .header .search-icon:hover {
+            color: orange;
+        }
+
+        .moving-banner {
+            background-color: lightseagreen;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+
+        .moving-banner span {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            animation: moveBanner 10s linear infinite;
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        @keyframes moveBanner {
+            0% { right: -100%; }
+            10% { right: 0%; }
+            90% { right: 100%; }
+            100% { right: 200%; }
+        }
+
+        .banner {
+            position: relative;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: rgb(7, 30, 120);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .job-listing {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ff5722;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .job-details {
+            flex-grow: 1;
+        }
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .company {
+            color: gray;
+            margin: 5px 0;
+        }
+        .posted-date {
+            font-size: 14px;
+            color: darkgray;
+        }
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        footer h3, footer h4 {
+            color: #FF6F61;
+        }
+        footer a {
+            color: #00d1ff;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header .contact-info {
+                justify-content: center;
+                gap: 10px;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+                top: 10px;
+            }
+            .banner .banner-text {
+                font-size: 20px;
+            }
+            .paragraph-text {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .video-container {
+                height: 200px;
+            }
+            .overlay-text h1 {
+                font-size: 18px;
+            }
+            .form-container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header .social-icons a {
+                font-size: 16px;
+            }
+            .moving-banner span {
+                font-size: 18px;
+            }
+            .banner .banner-text {
+                font-size: 16px;
+            }
+            .paragraph-text {
+                font-size: 16px;
+            }
+            .overlay-text h1 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="qualification-screen">
+        <div class="container">
+            <h2>Select Your Qualification</h2>
+            <select id="qualification-select">
+                <option value="">Select Qualification</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="header">
+            <div class="contact-info">
+                <span>Palam, New Delhi, Delhi 110077</span>
+                <span>info@uptoskills.com</span>
+                <span>+91-9319772294</span>
+            </div>
+            <div class="login-buttons">
+                <a href="./login.html">Employer Login</a>
+                <a href="./candidatelogin.html">Candidate Login</a>
+            </div>
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+
+        <div class="moving-banner">
+            <span><b>Welcome to UptoSkills - Your Gateway to Success!</b></span>
+        </div>
+
+        <div class="banner">
+            <img src="https://www.graphicdesigndegreehub.com/wp-content/uploads/2020/09/50-Fortune-1000-Companies-Offering-Graphic-Design-and-Web-Development-Internships.jpg" alt="UptoSkills Image">
+            <div class="menu">
+                <a href="./index.html"><b>Home</b></a>
+                <a href="./internship.html"><b>Internships</b></a>
+                <a href="./competition.html"><b>Competitions</b></a>
+                <a href="#"><b>Discover +</b></a>
+            </div>
+        </div>
+    </div>
+    <div class="job-listing">
+        <div class="logo">J</div>
+        <div class="job-details">
+            <p class="job-title"><b>Engineer Technician</b></p>
+            <p class="company">JRR SAFELOGIC TECHNOLOGIES SERVICES</p>
+            <p class="posted-date">Posted 15 minutes ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">M</div>
+        <div class="job-details">
+            <p class="job-title"><b>Inside Sales Intern</b></p>
+            <p class="company">Magicpin</p>
+            <p class="posted-date">Posted 10 days ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">T</div>
+        <div class="job-details">
+            <p class="job-title"><b>Management Trainee Client Relationship</b></p>
+            <p class="company">Techsharks</p>
+            <p class="posted-date">Posted 19 days ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">P</div>
+        <div class="job-details">
+            <p class="job-title"><b>Developer Intern</b></p>
+            <p class="company">ProcX</p>
+            <p class="posted-date">Posted 1 month ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">P</div>
+        <div class="job-details">
+            <p class="job-title"><b>Business Development Intern</b></p>
+            <p class="company">ProcX</p>
+            <p class="posted-date">Posted 1 month ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">P</div>
+        <div class="job-details">
+            <p class="job-title"><b>Business Development Councellor</b></p>
+            <p class="company">Planetspark</p>
+            <p class="posted-date">Posted 2 month ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+        <div class="logo">J</div>
+        <div class="job-details">
+            <p class="job-title"><b>Engineer(Technician)</b></p>
+            <p class="company">JRR SAFELOGIC TECHNOLOGIES</p>
+            <p class="posted-date">Posted 6 days ago</p>
+        </div>
+    </div>
+
+    <div class="job-listing">
+         <div class="logo">J</div>
+            <div class="job-details">
+                <p class="job-title"><b>Engineer(Technician)</b></p>
+                <p class="company">JRR SAFELOGIC TECHNOLOGIES</p>
+                <p class="posted-date">Posted 6 days ago</p>
+         </div>
+    </div>     
+
+    <div class="job-listing">
+        <div class="logo">J</div>
+           <div class="job-details">
+               <p class="job-title"><b>Signal Design Engineer</b></p>
+               <p class="company">Ms Maheswari Computers New Delhi</p>
+               <p class="posted-date">Posted 9 days ago</p>
+        </div>
+   </div>     
+
+   <div class="job-listing">
+    <div class="logo">J</div>
+       <div class="job-details">
+           <p class="job-title"><b>trannie</b></p>
+           <p class="company">apnavision</p>
+           <p class="posted-date">Posted 1 month ago</p>
+    </div>
+</div>  
+
+<footer>
+    <div>
+        <h3>UPTOSKILLS</h3>
+        <p>Address: Palam, New Delhi, Delhi 110077</p>
+        <p>Email: <a href="mailto:info@uptoskills.com">info@uptoskills.com</a></p>
+        <p>Phone: <a href="tel:+919319772294">+91-9319772294</a></p>
+        <div>
+            <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+    <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Jobs & Internships</a></li>
+            <li><a href="#">Become a Trainer</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Short Links</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund & Cancellation Policy</a></li>
+            <li><a href="#">Sitemap</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Find Us Here</h4>
+        <p><a href="#">Login to Download Certificate</a></p>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById("qualification-select").addEventListener("change", function() {
+            if (this.value) {
+                document.getElementById("qualification-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

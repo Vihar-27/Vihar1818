@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UptoSkills Internships Placements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .header .contact-info {
+             display: flex;
+              flex-wrap: wrap;
+              color: blue;
+              gap: 10px;
+              margin-bottom: 15px;
+              text-align: center;
+        }
+        .header .login-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .header .login-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: orange;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .header .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header .social-icons a {     
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+.header .social-icons a:hover {
+    color: orange;
+}
+
+.header .search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.header .search-icon:hover {
+    color: orange;
+}
+
+/* Adjustments for Mobile Screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header .contact-info {
+        justify-content: center;
+    }
+    
+    .header .login-buttons {
+        justify-content: center;
+    }
+    
+    .header .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .header .contact-info {
+        font-size: 14px;
+    }
+    
+    .header .login-buttons a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    
+    .header .social-icons a {
+        font-size: 16px;
+    }
+}
+        .moving-banner {
+            background-color: lightseagreen;
+            padding: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+        .moving-banner span {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            animation: moveBanner 10s linear infinite;
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        @keyframes moveBanner {
+            0% { right: -100%; }
+            10% { right: 0%; }
+            90% { right: 100%; }
+            100% { right: 200%; }
+        }
+        .banner {
+            position: relative;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .banner .banner-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color:lightseagreen;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(29, 5, 95, 0.8);
+        }    
+        .banner .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: lightseagreen;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            background: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .navbar {
+            display: flex;
+            background: white;
+            padding: 15px;
+            justify-content: center;
+            gap: 20px;
+            font-size: 18px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a1a2e; /* Dark background */
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #444;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+     
+        .paragraph-text {
+            font-size: 24px;
+            padding: 20px;
+            text-align: center;
+            background-color: lightseagreen;
+            color: white;
+            font-weight: bold;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-container .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .overlay-text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .overlay-text h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .overlay-text p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .wrapper {
+            background-color: lightseagreen;
+            padding: 20px;
+        }
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 100%;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: lightseagreen;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .checkbox-group label {
+            display: block;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: darkmagenta;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: darkviolet;
+        }
+    
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        footer h3, footer h4 {
+            color: #FF6F61;
+        }
+        footer a {
+            color: #00d1ff;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header .contact-info {
+                justify-content: center;
+                gap: 10px;
+            }
+            .menu {
+                flex-direction: column;
+                gap: 10px;
+                top: 10px;
+            }
+            .banner .banner-text {
+                font-size: 20px;
+            }
+            .paragraph-text {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .video-container {
+                height: 200px;
+            }
+            .overlay-text h1 {
+                font-size: 18px;
+            }
+            .form-container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header .social-icons a {
+                font-size: 16px;
+            }
+            .moving-banner span {
+                font-size: 18px;
+            }
+            .banner .banner-text {
+                font-size: 16px;
+            }
+            .paragraph-text {
+                font-size: 16px;
+            }
+            .overlay-text h1 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="contact-info">
+            <span>Palam, New Delhi, Delhi 110077</span>
+            <span>info@uptoskills.com</span>
+            <span>+91-9319772294</span>
+        </div>
+        <div class="login-buttons">
+            <a href="./login.html">Employer Login</a>
+            <a href="./candidatelogin.html">Candidate Login</a>
+        </div>
+        <div class="search-icon">
+            <i class="fas fa-search"></i>
+        </div>
+                <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+
+    <div class="moving-banner">
+        <span><b>Welcome to UptoSkills - Your Gateway to Success!</b></span>
+    </div>
+   
+    <div class="banner">
+        <img src="https://i.ytimg.com/vi/AnBes1DtVtM/maxresdefault.jpg" alt="UptoSkills Image">
+        <div class="menu">
+            <a href="./internship.html"><b>Internship</b></a>
+            <a href="./jobs.html"><b>Jobs</b></a>
+            <a href="./competition.html"><b>Competitions</b></a>
+            <div class="dropdown">
+                <a href="#" class="active"><b>Discover +</b></a>
+                <div class="dropdown-content">
+                    <a href="#">About Us</a>
+                    <a href="#">Degree Program</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Become a Trainer</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">FAQ's</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="paragraph-text">
+        We offer incredible Tech & Non-Tech Skill Development Trainings through collaborations with colleges.
+    </div>
+   
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="./taskvideo.mp4" type="video/mp4">
+        </video>
+        <div class="overlay-text">
+            <h3><b>UptoSkills Training Program</b></h3>
+            <h1><b>Accelerate your career with UptoSkills Trainings</b></h1>
+            <p><b>Trainings | Internships | Placements</b></p>
+        </div>
+    </div>
+ 
+    <div class="wrapper">
+        <div class="form-container">
+            <div class="form-group">
+                <input type="text" placeholder="College Name *" required>
+            </div>
+            <div class="form-group">
+                <select required>
+                    <option value="" disabled selected>Who you are *</option>
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="staff">Staff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Contact Person Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Contact Person Email *" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Contact Person Phone *" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Contact Person Designation *" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="College Location *" required>
+            </div>
+            <div class="form-group">
+                <label>In which services are you interested?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="trainings"> Trainings
+                    <label><input type="checkbox" value="internships"> Internships</label>
+                    <label><input type="checkbox" value="placements"> Placements</label>
+                    <label><input type="checkbox" value="learn-earn"> Learn & Earn (Hackathons & Competitions)</label>
+                    <label><input type="checkbox" value="fdp"> Faculty Development Program (FDP)</label>
+                    <label><input type="checkbox" value="vac"> Value Added Courses (VAC)</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Select Prefer Mode *</label>
+                <label><input type="radio" name="preferMode" value="online" required> Online</label>
+                <label><input type="radio" name="preferMode" value="offline" required> Offline</label>
+            </div>
+            <div class="form-group">
+                <label>What other services are you looking for?</label>
+                <textarea rows="4" placeholder="Please mention services you need"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div>
+            <h3>UPTOSKILLS</h3>
+            <p>Address: Palam, New Delhi, Delhi 110077</p>
+            <p>Email: <a href="mailto:info@uptoskills.com">info@uptoskills.com</a></p>
+            <p>Phone: <a href="tel:+919319772294">+91-9319772294</a></p>
+            <div>
+                <a href="https://x.com/SkillsUpto/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://m.facebook.com/Uptoskills/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/uptoskills" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/uptoskills?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@uptoskills9101?si=WVs3gABbklClMhwk" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://t.me/uptoskills" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Jobs & Internships</a></li>
+                <li><a href="#">Become a Trainer</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Short Links</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Refund & Cancellation Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Find Us Here</h4>
+            <p><a href="#">Login to Download Certificate</a></p>
+        </div>
+    </footer>
+</body>
+</html>
